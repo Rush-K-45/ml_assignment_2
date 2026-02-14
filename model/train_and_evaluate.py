@@ -158,9 +158,9 @@ def main(args):
     with open(os.path.join(args.artifacts, "confusions.json"), "w") as f:
         json.dump(confusions, f, indent=2)
 
-    # Print compact table for easy copy/paste to README
+    # Print compact table for README
     out = pd.DataFrame(metrics_table).T[["accuracy","auc","precision","recall","f1","mcc"]].round(4)
-    print("\n=== Comparison Table (copy into README.md) ===")
+    print("\n=== Comparison Table ===")
     print(out)
 
 if __name__ == "__main__":
